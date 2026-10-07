@@ -64,5 +64,37 @@ public class Dealer {
 		}
 			
 	}
-		
+	
+	//------------------------------------------------------------------
+	//--------------------------Método IMPRIMIR NAIPE------------------------------------
+	public void imprimirNaipe() {
+		//COLORES
+		final String RESET = "\u001B[0m";
+	    final String RED   = "\u001B[31m";
+	    final String GREEN = "\u001B[32m";
+	    final String BLACK = "\u001B[30m";
+	    final String BLUE = "\u001B[34m";
+	    
+	    
+		for(Carta cartas: naipe) {
+			//VARIABLE PARA EL COLOR
+			String color;
+			//CONDICIONAL PARA VERIFICAR EL PALO
+			if(cartas.getPalo().equals("☘️")) {
+				color=GREEN;
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+			}if(cartas.getPalo().equals("🖤")) {
+				color=BLACK;
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+			}if(cartas.getPalo().equals("❤️")) {
+				color=RED;
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+			}if(cartas.getPalo().equals("💎")) {
+				color=BLUE;
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+			}
+			
+		}
 	}
+		
+}
