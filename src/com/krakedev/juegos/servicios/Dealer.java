@@ -5,7 +5,13 @@ import java.util.ArrayList;
 import com.krakedev.juegos.entidades.Carta;
 
 public class Dealer {
-	ArrayList<Carta> naipe = new ArrayList<Carta>();
+	ArrayList<Carta> naipe;
+	
+	//Construc tor
+	public Dealer() {
+		naipe = new ArrayList<Carta>();
+		generarNaipe();
+	}
 
 	// get and set
 	public ArrayList<Carta> getNaipe() {
