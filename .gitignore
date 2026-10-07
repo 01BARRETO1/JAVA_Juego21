@@ -1,0 +1,44 @@
+# Eclipse metadata
+.metadata/
+*.log
+
+# Eclipse project files
+*.classpath
+*.project
+*.settings/
+
+# Build output
+bin/
+build/
+target/
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# IDE specific
+.vscode/
+.idea/
+*.iml
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Java
+*.class
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
