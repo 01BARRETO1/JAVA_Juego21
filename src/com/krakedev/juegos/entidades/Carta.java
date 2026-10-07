@@ -35,8 +35,10 @@ public class Carta {
 	}
 	//Método Imprimir
 	public void imprimir() {
+		System.out.println("-------------Juego 21 Blackjack----------------");
 		System.out.println("Valor de la carta: "+ valor);
 		System.out.println("Valor juego: "+ valorJuego);
 		System.out.println("El palo es: "+ palo);
+		System.out.println("-----------------------------------------------");
 	}
 }
