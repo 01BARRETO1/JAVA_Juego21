@@ -102,5 +102,13 @@ public class Dealer {
 			
 		}
 	}
+	
+	//------------------------------------------------------------------
+	//--------------------------Generar Aleatorio------------------------------------
+	public int generarAleatorio(int maximo) {
+		
+		int aleatorio=(int)(Math.random()*(maximo+1));
+		return aleatorio;
+	}
 		
 }
