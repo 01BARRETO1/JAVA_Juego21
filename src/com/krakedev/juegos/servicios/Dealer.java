@@ -110,5 +110,16 @@ public class Dealer {
 		int aleatorio=(int)(Math.random()*(maximo+1));
 		return aleatorio;
 	}
+	
+	//------------------------------------------------------------------
+	//--------------------------Entregar Carta------------------------------------
+	public Carta entregarCarta() {
+		//número aleatorio
+		int juega=generarAleatorio(naipe.size()-1);
+		//Guardo en tipo Carta la carta, y la elimino del arreglo naipe
+		Carta carta=naipe.remove(juega);
+		//retorna la carta
+		return carta;
+	}
 		
 }
