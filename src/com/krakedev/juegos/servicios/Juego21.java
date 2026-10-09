@@ -13,6 +13,17 @@ public class Juego21 {
     public Juego21() {
         jugadores = new ArrayList<>();
     }
+  
+  //Get and set
+    public Dealer getDealer() {
+  		return dealer;
+  	}
+
+  	public void setDealer(Dealer dealer) {
+  		this.dealer = dealer;
+  	}
+
+    
   //------Cargar valores
     public void cargarValores(Dealer dealer) {
     	//Guardo el naipe
@@ -35,7 +46,8 @@ public class Juego21 {
     }
 
 
-    //------------------------------------------------
+  
+	//------------------------------------------------
     //------método inicializar
     public void inicializar() {
         dealer = new Dealer();       // inicializa el dealer
