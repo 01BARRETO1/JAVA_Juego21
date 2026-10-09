@@ -88,16 +88,16 @@ public class Dealer {
 			//CONDICIONAL PARA VERIFICAR EL PALO
 			if(cartas.getPalo().equals("☘️")) {
 				color=GREEN;
-				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+ " → " + cartas.getValorJuego()+RESET);
 			}if(cartas.getPalo().equals("🖤")) {
 				color=BLACK;
-				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+ " → " + cartas.getValorJuego()+RESET);
 			}if(cartas.getPalo().equals("❤️")) {
 				color=RED;
-				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+ " → " + cartas.getValorJuego()+RESET);
 			}if(cartas.getPalo().equals("💎")) {
 				color=BLUE;
-				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+RESET);
+				System.out.println(color+cartas.getPalo()+""+cartas.getValor()+ " → " + cartas.getValorJuego()+RESET);
 			}
 			
 		}
