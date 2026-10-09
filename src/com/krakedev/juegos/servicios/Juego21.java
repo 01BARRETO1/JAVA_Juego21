@@ -72,7 +72,31 @@ public class Juego21 {
 		for(Jugador players: jugadores) {
 			repartirCarta(players);
 		}
+		calcularTotal();
 	}
+    
+  //------------------------------------------------
+  //------método calcularTotal():
+  public void calcularTotal() {
+	  
+      for (Jugador jugador : jugadores) {
+          int total = 0; // acumulador para cada jugador
+          ArrayList<Carta> cartas = jugador.getCartas();
+
+          for (Carta carta : cartas) {
+              total += carta.getValorJuego(); // sumamos el valorJuego de cada carta
+             
+          }
+          
+          jugador.setPuntajeCartas(total); // guardamos el puntaje total en el jugador
+          
+          
+          
+          
+      }
+     
+  }
+
     
 }
 

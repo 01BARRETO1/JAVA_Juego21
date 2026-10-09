@@ -24,7 +24,7 @@ public class TestJuego21 {
 
         // Repartir una ronda (cada jugador recibe una carta)
         juego21.repartirRonda();
-
+        juego21.repartirRonda();
         // Imprimir cartas de cada jugador
         a.imprimir();
         b.imprimir();
@@ -32,5 +32,6 @@ public class TestJuego21 {
 
         // Verificar que esas cartas ya salieron del naipe
         juego21.getDealer().imprimirNaipe(); 
+       
     }
 }
