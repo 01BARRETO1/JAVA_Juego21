@@ -54,5 +54,13 @@ public class Juego21 {
         Carta carta = dealer.entregarCarta(); // pide carta al dealer
         jugador.recibirCarta(carta);          // entrega la carta al jugador
     }
+  //------------------------------------------------
+   //------método repartirRonda
+    public void repartirRonda() {
+		for(Jugador players: jugadores) {
+			repartirCarta(players);
+		}
+	}
+    
 }
 
