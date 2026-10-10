@@ -65,7 +65,7 @@ public class Juego21 {
 		if (carta != null) {
 			jugador.recibirCarta(carta); // entrega la carta al jugador
 		} else {
-			System.out.println("No se pudo repartir carta, se acabó el naipe");
+			//No se pudo repartir carta, se acabó el naipe
 			return;
 		}
 	}
@@ -74,7 +74,7 @@ public class Juego21 {
 	// ------método repartirRonda
 	public void repartirRonda() {
 		if (dealer.getNaipe().isEmpty()) {
-	        System.out.println("--No se puede repartir ronda, el mazo está vacío--");
+	        //--No se puede repartir ronda, el mazo está vacío--
 	        return; // salir del método sin repartir
 	    }
 		for (Jugador players : jugadores) {
@@ -126,7 +126,7 @@ public class Juego21 {
 		for (int i = 0; i < 3; i++) {
 			// Verificar que el mazo no esté vacío antes de repartir
 	        if (dealer.getNaipe().isEmpty()) {
-	            System.out.println("--Se acabó el naipe, no se puede repartir ronda--");
+	            //--Se acabó el naipe, no se puede repartir ronda--
 	            break; // salir del bucle de rondas
 	        }
 			repartirRonda();
@@ -137,12 +137,10 @@ public class Juego21 {
 			// verificar si la lista tiene elementos
 			if (rondaGanadores.size() > 0) {
 				// Aquí entras solo si hay al menos un ganador en la ronda
-				System.out.println("Hay ganadores en esta ronda ");
+				
 				// Añadir todos los ganadores de la ronda
 				ganadores.addAll(rondaGanadores);
-				for (int x = 0; x < ganadores.size(); x++) {
-					System.out.println("Gana: " + ganadores.get(x).getNickname());
-				}
+				
 
 				// Romper el bucle de rondas porque ya hubo ganadores
 				break;

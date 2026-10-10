@@ -115,7 +115,7 @@ public class Dealer {
 	//--------------------------Entregar Carta------------------------------------
 	public Carta entregarCarta() {
 		if(naipe.size()==0) {
-			 System.out.println("Se acabó el naipe");
+			//Se acabó el naipe
 			 return null; 
 			 
 		}
