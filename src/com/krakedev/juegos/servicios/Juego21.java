@@ -120,7 +120,7 @@ public class Juego21 {
 	// ------11. Método jugar
 	public ArrayList<Jugador> jugar() {
 		// Lista de ganadores para devolver, return
-		ArrayList<Jugador> ganadores = new ArrayList<>();
+		ArrayList<Jugador> ganadores = new ArrayList<Jugador>();
 
 		// ciclo for 3 rondas
 		for (int i = 0; i < 3; i++) {

@@ -86,5 +86,12 @@ public class Jugador {
 	}
 	
 	
+	// -------------------------------------------
+	// -------método encerar
+	public void encerar() {
+		setPuntajeCartas(0);
+		getCartas().clear();
+	}
+	
 
 }
