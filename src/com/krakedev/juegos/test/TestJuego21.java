@@ -1,5 +1,7 @@
 package com.krakedev.juegos.test;
 
+import java.util.ArrayList;
+
 import com.krakedev.juegos.entidades.Jugador;
 import com.krakedev.juegos.servicios.Juego21;
 
@@ -23,15 +25,40 @@ public class TestJuego21 {
         juego21.inicializar();
 
         // Repartir una ronda (cada jugador recibe una carta)
-        juego21.repartirRonda();
-        juego21.repartirRonda();
+        //juego21.repartirRonda();
+        
+       //Primera prueba (una sola ejecución): 
+        //juego21.jugar();
+        
         // Imprimir cartas de cada jugador
-        a.imprimir();
-        b.imprimir();
-        c.imprimir();
+        //a.imprimir();
+        //b.imprimir();
+        //c.imprimir();
 
         // Verificar que esas cartas ya salieron del naipe
         juego21.getDealer().imprimirNaipe(); 
+        
+        //Segunda prueba (for de 10 iteraciones):
+       for(int i=0; i<=10; i++) {
+    	   ArrayList<Jugador> ganadores=juego21.jugar();
+    	   if(juego21.getDealer().getNaipe().size()==0) {
+    		   System.out.println("--Se acabó el naipe--");
+    		   a.imprimir();
+               b.imprimir();
+               c.imprimir();
+               juego21.getDealer().generarNaipe();
+    		   
+    	   }
+    	   if(ganadores.size()>0) {
+    		   for(int x=0; x<ganadores.size(); x++) {
+	            	System.out.println("Gana: "+ganadores.get(x).getNickname());
+	            	a.imprimir();
+	                b.imprimir();
+	                c.imprimir();
+	            }
+    		   break;
+    	   }
+       }
        
     }
 }

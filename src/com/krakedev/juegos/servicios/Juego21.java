@@ -48,6 +48,7 @@ public class Juego21 {
 	// ------método inicializar
 	public void inicializar() {
 		dealer = new Dealer(); // inicializa el dealer
+
 		cargarValores(dealer); // asigna valores a las cartas
 	}
 
@@ -61,12 +62,21 @@ public class Juego21 {
 	// ------método repartirCarta
 	public void repartirCarta(Jugador jugador) {
 		Carta carta = dealer.entregarCarta(); // pide carta al dealer
-		jugador.recibirCarta(carta); // entrega la carta al jugador
+		if (carta != null) {
+			jugador.recibirCarta(carta); // entrega la carta al jugador
+		} else {
+			System.out.println("No se pudo repartir carta, se acabó el naipe");
+			return;
+		}
 	}
 
 	// ------------------------------------------------
 	// ------método repartirRonda
 	public void repartirRonda() {
+		if (dealer.getNaipe().isEmpty()) {
+	        System.out.println("--No se puede repartir ronda, el mazo está vacío--");
+	        return; // salir del método sin repartir
+	    }
 		for (Jugador players : jugadores) {
 			repartirCarta(players);
 		}
@@ -91,48 +101,56 @@ public class Juego21 {
 		}
 
 	}
-  //------------------------------------------------
-  // ------10. Validar ganador
+
+	// ------------------------------------------------
+	// ------10. Validar ganador
 	public ArrayList<Jugador> validarGanador() {
-		//Instancia un ArrayList<Jugador> ganadores y lo instancia.
-		ArrayList<Jugador> ganadores=new ArrayList<Jugador>();
-		//Barre la lista de jugadores y busca jugadores con puntaje = 21
-		for(Jugador YouWin: jugadores) {
-			if(YouWin.getPuntajeCartas()==21) {
+		// Instancia un ArrayList<Jugador> ganadores y lo instancia.
+		ArrayList<Jugador> ganadores = new ArrayList<Jugador>();
+		// Barre la lista de jugadores y busca jugadores con puntaje = 21
+		for (Jugador YouWin : jugadores) {
+			if (YouWin.getPuntajeCartas() == 21) {
 				ganadores.add(YouWin);
 			}
 		}
 		return ganadores;
 	}
-	 //------------------------------------------------
+
+	// ------------------------------------------------
 	// ------11. Método jugar
 	public ArrayList<Jugador> jugar() {
-		//Lista de ganadores para devolver, return
-	    ArrayList<Jugador> ganadores = new ArrayList<>();
-	    
-	    //ciclo for 3 rondas
-	    for (int i = 0; i < 3; i++) {
-	        repartirRonda();
+		// Lista de ganadores para devolver, return
+		ArrayList<Jugador> ganadores = new ArrayList<>();
 
-	        //Guardo los ganadores
-	        ArrayList<Jugador> rondaGanadores = validarGanador();
-
-	        
-	        //verificar si la lista tiene elementos
-	        if (rondaGanadores.size() > 0) {
-	        	// Aquí entras solo si hay al menos un ganador en la ronda
-	        	System.out.println("Hay ganadores en esta ronda");
-	            // Añadir todos los ganadores de la ronda
-	            ganadores.addAll(rondaGanadores);
-	            // Romper el bucle de rondas porque ya hubo ganadores
-	            break;
+		// ciclo for 3 rondas
+		for (int i = 0; i < 3; i++) {
+			// Verificar que el mazo no esté vacío antes de repartir
+	        if (dealer.getNaipe().isEmpty()) {
+	            System.out.println("--Se acabó el naipe, no se puede repartir ronda--");
+	            break; // salir del bucle de rondas
 	        }
-	    }
+			repartirRonda();
 
-	    return ganadores;
+			// Guardo los ganadores
+			ArrayList<Jugador> rondaGanadores = validarGanador();
+
+			// verificar si la lista tiene elementos
+			if (rondaGanadores.size() > 0) {
+				// Aquí entras solo si hay al menos un ganador en la ronda
+				System.out.println("Hay ganadores en esta ronda ");
+				// Añadir todos los ganadores de la ronda
+				ganadores.addAll(rondaGanadores);
+				for (int x = 0; x < ganadores.size(); x++) {
+					System.out.println("Gana: " + ganadores.get(x).getNickname());
+				}
+
+				// Romper el bucle de rondas porque ya hubo ganadores
+				break;
+			}
+
+		}
+
+		return ganadores;
 	}
-
-	
-	
 
 }
